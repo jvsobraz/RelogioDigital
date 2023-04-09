@@ -66,3 +66,40 @@ function padZero(number) {
 // Inicializa o relógio
 updateClock();
 
+// Variáveis do cronômetro
+let stopwatchInterval;
+let stopwatchSeconds = 0;
+let stopwatchRunning = false;
+
+// Função para iniciar o cronômetro
+function startStopwatch() {
+  if (!stopwatchRunning) {
+    stopwatchRunning = true;
+    stopwatchInterval = setInterval(() => {
+      stopwatchSeconds++;
+      timeElement.textContent = formatTime(stopwatchSeconds);
+    }, 1000);
+  }
+}
+
+// Função para pausar o cronômetro
+function pauseStopwatch() {
+  clearInterval(stopwatchInterval);
+  stopwatchRunning = false;
+}
+
+// Função para resetar o cronômetro
+function resetStopwatch() {
+  clearInterval(stopwatchInterval);
+  stopwatchRunning = false;
+  stopwatchSeconds = 0;
+  timeElement.textContent = "00:00:00";
+}
+
+// Função para formatar o tempo no formato HH:MM:SS
+function formatTime(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const remainingSeconds = seconds % 60;
+  return `${padZero(hours)}:${padZero(minutes)}:${padZero(remainingSeconds)}`;
+}
