@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Relógio Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="clock-container">
+    <div class="clock">
+      <h1 id="time"></h1>
+      <h2 id="date"></h2>
+      <div class="buttons">
+        <button onclick="startTimer()">Iniciar Temporizador</button>
+        <button onclick="stopTimer()">Parar Temporizador</button>
+        <button onclick="resetTimer()">Reiniciar Temporizador</button>
+      </div>
+      <div class="timezone">
+        <label for="timezone-select">Fuso Horário:</label>
+        <select id="timezone-select" onchange="changeTimezone()">
+          <option value="-12">GMT -12:00</option>
+          <option value="-11">GMT -11:00</option>
+          <option value="-10">GMT -10:00</option>
+          <option value="-9">GMT -09:00</option>
+          <option value="-8">GMT -08:00</option>
+          <option value="-7">GMT -07:00</option>
+          <option value="-6">GMT -06:00</option>
+          <option value="-5">GMT -05:00</option>
+          <option value="-4">GMT -04:00</option>
+          <option value="-3">GMT -03:00</option>
+          <option value="-2">GMT -02:00</option>
+          <option value="-1">GMT -01:00</option>
+          <option value="0" selected>GMT 00:00</option>
+          <option value="1">GMT +01:00</option>
+          <option value="2">GMT +02:00</option>
+          <option value="3">GMT +03:00</option>
+          <option value="4">GMT +04:00</option>
+          <option value="5">GMT +05:00</option>
+          <option value="6">GMT +06:00</option>
+          <option value="7">GMT +07:00</option>
+          <option value="8">GMT +08:00</option>
+          <option value="9">GMT +09:00</option>
+          <option value="10">GMT +10:00</option>
+          <option value="11">GMT +11:00</option>
+          <option value="12">GMT +12:00</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
